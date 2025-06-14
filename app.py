@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from PIL import Image
 from io import BytesIO
-from reportlab.lib.utils import ImageReader
 import base64
 
 # Set up the Streamlit page
