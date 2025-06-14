@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from PIL import Image
 from io import BytesIO
-from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.utils import ImageReader
 import base64
@@ -75,9 +74,4 @@ if api_key:
                 c.save()
                 pdf_buffer.seek(0)
 
-                # Provide download link for the PDF
-                b64 = base64.b64encode(pdf_buffer.read()).decode()
-                href = f'<a href="data:application/pdf;base64,{b64}" download="mandala.pdf">📥 Download Mandala as PDF</a>'
-                st.markdown(href, unsafe_allow_html=True)
-            else:
-                st.error(f"Error: {response.status_code} - {response.text}")
+            
